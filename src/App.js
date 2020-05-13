@@ -22,8 +22,8 @@ const App = ({ mode }) => {
           classNames={`main__animation-change-mode`}
         >
           <main className="main">
-            <DashboardMode />
-            <EditMode />
+            <DashboardMode key={`dashboard-mode-${mode}`} />
+            <EditMode key={`edit-mode-${!mode}`} />
           </main>
         </CSSTransition>
         <PostModal />

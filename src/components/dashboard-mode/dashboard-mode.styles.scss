@@ -1,0 +1,17 @@
+// Media-queries mixins
+@import '../../styles/mixins.scss';
+
+.dashboard-mode {
+  width: 100%;
+  height: auto;
+  // transition: transform 0.2s ease-in;
+  // transform: translateX(0);
+
+  @include respond(phone) {
+    position: relative;
+  }
+}
+
+.translate-to-edit-mode {
+  transform: translateX(-102%);
+}

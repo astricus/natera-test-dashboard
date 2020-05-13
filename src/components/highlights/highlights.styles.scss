@@ -1,0 +1,36 @@
+.highlights {
+  &__heading {
+    margin: 0;
+    padding-top: var(--gutter-half-width);
+    padding-left: 21px;
+    padding-bottom: 13px;
+  }
+
+  &__animation-enter {
+    overflow: hidden;
+    .card {
+      transform: translateY(-100%);
+    }
+  }
+
+  &__animation-enter-active {
+    .card {
+      transform: translateY(0);
+      transition: transform 200ms ease;
+    }
+  }
+
+  &__animation-exit {
+    overflow-x: hidden;
+    .card {
+      transform: translateY(0);
+    }
+  }
+
+  &__animation-exit-active {
+    .card {
+      transform: translateY(-100%);
+      transition: transform 200ms ease;
+    }
+  }
+}

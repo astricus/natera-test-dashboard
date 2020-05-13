@@ -1,0 +1,87 @@
+.react-autosuggest {
+  &__container {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: url('/img/SVG/search_icon.svg');
+      width: 11px;
+      height: 11px;
+      top: 7px;
+      right: 16px;
+    }
+  }
+  &__input {
+    position: relative;
+    width: 100%;
+    border: 1px solid #dadada;
+    border-radius: var(--border-radius);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 7px 14px 6px 14px;
+
+    &::placeholder {
+      color: #aeaeae;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid lighten(#6883e4, 15%);
+    }
+    &--open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &--danger {
+      border: 1px solid var(--color-danger);
+    }
+  }
+
+  &__suggestions-container {
+    display: none;
+
+    &--open {
+      display: block;
+      position: absolute;
+      top: 29px;
+      width: 100%;
+      max-height: 89px;
+      border: 1px solid #aaa;
+      background-color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      line-height: 14px;
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+      overflow-y: auto;
+      z-index: 1030;
+    }
+  }
+
+  &__suggestions-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__suggestion {
+    cursor: pointer;
+    padding: 7px 14px 7px 14px;
+
+    &--highlighted {
+      background-color: var(--color-background);
+    }
+  }
+
+  &__suggestion-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__suggestion-avatar {
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
+    border-radius: 14px;
+  }
+}

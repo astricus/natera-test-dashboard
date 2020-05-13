@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import { selectMode } from './redux/mode/mode.selectors';
+import { CSSTransition } from 'react-transition-group';
+import Header from './components/header/header.component';
+import Container from './components/grid/container/container.component';
+import DashboardMode from './components/dashboard-mode/dashboard-mode.component';
+import EditMode from './components/edit-mode/edit-mode.component';
+import PostModal from './components/post/post-modal/post-modal.component';
+import PostCreateModal from './components/post/post-create-modal/post-create-modal.component';
 
-function App() {
+import './App.scss';
+
+const App = ({ mode }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Header />
+      <Container>
+        <CSSTransition
+          in={!mode}
+          timeout={300}
+          classNames={`main__animation-change-mode`}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <main className="main">
+            <DashboardMode />
+            <EditMode />
+          </main>
+        </CSSTransition>
+        <PostModal />
+        <PostCreateModal />
+      </Container>
+    </>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => ({
+  mode: selectMode(state),
+});
+
+export default connect(mapStateToProps)(App);

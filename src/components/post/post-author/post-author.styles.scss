@@ -1,0 +1,41 @@
+.post {
+  &__author {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  &__author--edit-mode {
+    padding: 8px 20px 12px 20px;
+  }
+
+  &__author-photo {
+    display: block;
+    width: 37px;
+    height: 37px;
+    border-radius: 20px;
+    margin-right: 11px;
+  }
+
+  &__author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__author-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__author-position {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.01em;
+    color: #90a0b7;
+    padding-top: 2px;
+  }
+}

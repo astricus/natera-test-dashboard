@@ -1,0 +1,38 @@
+.btn-inline {
+  position: relative;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border: none;
+  background-color: transparent;
+  margin-right: 23px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:after {
+    content: '';
+    -webkit-mask: url('/img/SVG/right-arrow.svg');
+    mask: url('/img/SVG/right-arrow.svg');
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: var(--color-primary);
+    position: absolute;
+    right: -23px;
+    top: 2px;
+    width: 13px;
+    height: 13px;
+    margin-left: 10px;
+  }
+
+  &--mobile {
+    color: var(--color-subsection-heading);
+    &:after {
+      background-color: var(--color-subsection-heading);
+    }
+  }
+}

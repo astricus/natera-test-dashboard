@@ -1,0 +1,166 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Sierra Ferguson",
+      "position": "TPM",
+      "avatarUrl": "/img/face00001.png"
+    },
+    {
+      "id": "2",
+      "name": "Lina Lake",
+      "position": "Head of manager dept.",
+      "avatarUrl": "/img/face00004.png"
+    },
+    {
+      "id": "3",
+      "name": "George Fields",
+      "position": "Head of QA dept.",
+      "avatarUrl": "/img/face00003.png"
+    },
+    {
+      "id": "4",
+      "name": "Glen Moore",
+      "position": "Head of Statistics",
+      "avatarUrl": "/img/face00002.png"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "type": "ordinary",
+      "title": "Failure is simply the opportunity to begin again, this time more intelligently.",
+      "text": "What if a surgeon or patient could train or prepare for a complex procedure by simulating it first in a 360-degree, 3D simulation? What if a patient could put aside the pamphlets and actually see the impact a diet would have on his or her future appearance? What if impaired mobility patients could experience brain- and coordination-building activities in complete safety?\nImmersive \"digital reality\" tools such as augmented reality (AR) and virtual reality (VR) are making these scenarios increasingly realistic. As with many earlier technology waves, VR and AR got an early boost from frivolous uses and are graduating to more constructive roles. Barriers to technology, cost, and content are beginning to fall, and early adopters are already hard at work.",
+      "imageUrl": "",
+      "authorId": "1",
+      "isPublished": true
+    },
+    {
+      "id": "2",
+      "type": "ordinary",
+      "title": "We did it!",
+      "text": "Combining technological innovation, entrepreneurship, and rapid growth, the Fast 500 companies—both large and small, public and private—lead and transform the way we do business today.",
+      "imageUrl": "/img/Happy-Business-Computer-People-1.png",
+      "authorId": "2",
+      "isPublished": true
+    },
+    {
+      "id": "3",
+      "type": "ordinary",
+      "title": "Obstacles are those frightful things you see when you take your eyes off your goal.",
+      "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat quae dignissimos, iusto, a, in qui aspernatur voluptate architecto pariatur autem repellendus. Vel corporis, quae itaque expedita veritatis molestiae doloremque odit!",
+      "imageUrl": "",
+      "authorId": "3",
+      "isPublished": true
+    },
+    {
+      "id": "4",
+      "type": "statistical",
+      "title": {
+        "number": 60,
+        "measure": "%",
+        "object": "cases",
+        "subtitle": "completed ahead of schedule",
+        "growth": 21,
+        "growthMessage": "worse than last week",
+        "iconUrl": "/img/SVG/Asset 8.svg"
+      },
+      "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat quae dignissimos, iusto, a, in qui aspernatur voluptate architecto pariatur autem repellendus. Vel corporis, quae itaque expedita veritatis molestiae doloremque odit!",
+      "imageUrl": "",
+      "authorId": "4",
+      "isPublished": true
+    },
+    {
+      "id": "5",
+      "type": "ordinary",
+      "title": "If everyone is moving forward together, then success takes care of itself.",
+      "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat quae dignissimos, iusto, a, in qui aspernatur voluptate architecto pariatur autem repellendus. Vel corporis, quae itaque expedita veritatis molestiae doloremque odit!",
+      "imageUrl": "",
+      "authorId": "4",
+      "isPublished": false
+    },
+    {
+      "id": "6",
+      "type": "ordinary",
+      "title": "Obstacles are those frightful things you see when you take your eyes off your goal.",
+      "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat quae dignissimos, iusto, a, in qui aspernatur voluptate architecto pariatur autem repellendus. Vel corporis, quae itaque expedita veritatis molestiae doloremque odit!",
+      "imageUrl": "",
+      "authorId": "3",
+      "isPublished": false
+    },
+    {
+      "id": "7",
+      "type": "ordinary",
+      "title": "We did it again!",
+      "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat quae dignissimos, iusto, a, in qui aspernatur voluptate architecto pariatur autem repellendus. Vel corporis, quae itaque expedita veritatis molestiae doloremque odit!",
+      "imageUrl": "/img/group-of-business-partners-800x533.png",
+      "authorId": "2",
+      "isPublished": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "project_title": "Alpha project",
+      "company": "Inceptos Hymenaeos Ltd",
+      "status": 52,
+      "release_date": "11/12/2019"
+    },
+    {
+      "id": "2",
+      "project_title": "Betha project ",
+      "company": "Nec Euismod In Company",
+      "status": 23,
+      "release_date": "12/9/2019"
+    },
+    {
+      "id": "3",
+      "project_title": "Gamma project",
+      "company": "Erat Volutpat",
+      "status": 25,
+      "release_date": "12/25/2019"
+    },
+    {
+      "id": "4",
+      "project_title": "Sigma project ",
+      "company": "Tellus Ltd",
+      "status": 48,
+      "release_date": "11/25/2019"
+    },
+    {
+      "id": "5",
+      "project_title": "Kappa project",
+      "company": "Hymenaeos Ltd",
+      "status": 89,
+      "release_date": "10/20/2019"
+    },
+    {
+      "id": "6",
+      "project_title": "Omega project ",
+      "company": "Gessertinno Llc",
+      "status": 56,
+      "release_date": "11/22/2019"
+    },
+    {
+      "id": "7",
+      "project_title": "Tetha project",
+      "company": "Umbralora Montro",
+      "status": 95,
+      "release_date": "10/16/2019"
+    },
+    {
+      "id": "8",
+      "project_title": "Epsilon project ",
+      "company": "Poprisi Company",
+      "status": 85,
+      "release_date": "10/25/2019"
+    },
+    {
+      "id": "9",
+      "project_title": "Delta project",
+      "company": "Trast Nationale",
+      "status": 75,
+      "release_date": "11/1/2019"
+    }
+  ]
+}

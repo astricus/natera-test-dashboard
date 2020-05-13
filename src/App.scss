@@ -1,0 +1,83 @@
+@import './styles/mixins.scss';
+
+.container-main {
+  width: 100%;
+  max-width: 990px;
+  margin: 0 auto;
+}
+
+.main {
+  margin-top: -50px;
+  position: relative;
+
+  @include respond(phone) {
+    margin-top: 26px;
+    height: auto;
+  }
+
+  &__animation-change-mode-enter {
+    overflow: hidden;
+    .dashboard-mode {
+      display: inherit !important;
+      transform: translateX(0);
+    }
+    .edit-mode {
+      display: inherit !important;
+      transform: translateX(0);
+    }
+  }
+
+  &__animation-change-mode-enter-active {
+    overflow: hidden;
+    .dashboard-mode {
+      display: inherit !important;
+      transform: translateX(-102%);
+      transition: transform 300ms ease;
+    }
+    .edit-mode {
+      display: inherit !important;
+      transform: translateX(-102%);
+      transition: transform 300ms ease;
+    }
+  }
+
+  &__animation-change-mode-enter-done {
+    overflow: visible;
+    .dashboard-mode {
+      display: none;
+    }
+    .edit-mode {
+      transform: translateX(-102%);
+    }
+  }
+
+  &__animation-change-mode-exit {
+    overflow: hidden;
+    .dashboard-mode {
+      display: inherit !important;
+      transform: translateX(-102%);
+    }
+    .edit-mode {
+      display: inherit !important;
+      transform: translateX(-102%);
+    }
+  }
+
+  &__animation-change-mode-exit-active {
+    overflow: hidden;
+    .dashboard-mode {
+      display: inherit !important;
+      transform: translateX(0);
+      transition: transform 300ms ease;
+    }
+    .edit-mode {
+      display: inherit !important;
+      transform: translateX(0);
+      transition: transform 300ms ease;
+    }
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

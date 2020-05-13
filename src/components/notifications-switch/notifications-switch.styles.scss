@@ -1,0 +1,11 @@
+.notifications-switch {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 21px;
+  }
+
+  &__switch {
+    margin-right: 18px;
+  }
+}

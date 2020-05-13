@@ -1,0 +1,66 @@
+// Media-queries mixins
+@import '../../styles/mixins.scss';
+
+.header {
+  height: 202px;
+  background-color: var(--color-primary);
+
+  &__navigation {
+    padding-top: 47px;
+  }
+
+  @include respond(phone) {
+    height: 75px;
+
+    &__navigation {
+      padding-top: 0;
+    }
+  }
+}
+
+.navigation {
+  margin-left: 0;
+  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+  &__item {
+    position: relative;
+    display: block;
+    font-family: 'Montserrat';
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    &--active {
+      color: rgba(255, 255, 255, 1);
+    }
+    &--active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -11px;
+      width: 100%;
+      border-bottom: 3px solid #ffffff;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    @include respond(phone) {
+      margin-top: 24px;
+      margin-left: 24px;
+      cursor: default;
+
+      &--active::after {
+        border-bottom: none;
+      }
+    }
+  }
+}

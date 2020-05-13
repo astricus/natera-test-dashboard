@@ -1,0 +1,81 @@
+@import '../../styles/mixins.scss';
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &--primary {
+    max-width: 100%;
+    width: 146px;
+    height: 23px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: var(--color-text-white);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    transition: all 0.2s ease;
+    outline: none;
+
+    &:hover {
+      box-shadow: var(--box-shadow);
+    }
+
+    &--close {
+      height: 32px;
+      @include respond(phone) {
+        height: 23px;
+        width: 120px;
+      }
+    }
+  }
+
+  &--secondary {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background-color: transparent;
+    border-radius: 3px;
+    padding: 4px 0;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: #ffffff;
+    }
+  }
+
+  &--danger {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    border: 1px solid var(--color-danger);
+    color: var(--color-danger);
+    background-color: transparent;
+    border-radius: 3px;
+    padding: 4px 0;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-danger);
+      color: #ffffff;
+    }
+  }
+}

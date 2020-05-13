@@ -1,0 +1,26 @@
+.post {
+  &__not-published {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 13px;
+    background-color: #ffeceb;
+  }
+
+  &__not-published-message {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: var(--color-danger);
+  }
+
+  &__not-published-icon {
+    margin-top: -2px;
+    margin-right: 2px;
+    width: 12px;
+    height: 10px;
+  }
+}

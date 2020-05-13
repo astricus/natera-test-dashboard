@@ -1,0 +1,27 @@
+// CSS Variables
+:root {
+  // Colors
+  --color-primary: #6883e4;
+  --color-danger: #f7645b;
+  --color-background: #e5e5e5;
+  --color-background-white: #ffffff;
+  --color-text: #484848;
+  --color-text-white: #ffffff;
+  --color-heading: #757575;
+  --color-subsection-heading: #c4c4c4;
+  --color-text-footer: #757575;
+  --color-post-author-name: #192a3e;
+  --color-post-author-position: #192a3e;
+
+  // Shadow
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+
+  // Borders
+  --border-radius: 5px;
+
+  // Widths
+  --container-max-width: 990px;
+  --container-min-width: 320px;
+  --gutter-width: 18px;
+  --gutter-half-width: 9px;
+}

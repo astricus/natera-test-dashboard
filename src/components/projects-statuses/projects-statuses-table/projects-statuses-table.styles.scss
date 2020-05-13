@@ -1,0 +1,157 @@
+// Media-queries mixins
+@import '../../../styles/mixins.scss';
+
+.projects-statuses {
+  &__wrapper {
+    margin: 30px;
+  }
+
+  @include respond(phablet) {
+    &__wrapper {
+      margin: 14px 27px;
+    }
+  }
+}
+
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th:first-child {
+    padding-left: 30px;
+  }
+  th {
+    text-align: left;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  th:last-child {
+    text-align: right;
+    padding-right: 35px;
+  }
+
+  td:first-child {
+    padding-left: 30px;
+  }
+  td {
+    font-size: 12px;
+    line-height: 33px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  td:last-child {
+    text-align: right;
+    padding-right: 35px;
+  }
+
+  &--edit-mode {
+    td:last-child {
+      text-align: right;
+      padding-right: 0px;
+    }
+  }
+
+  &__project-title {
+    width: 22%;
+  }
+
+  &__company {
+    width: 30%;
+  }
+
+  &__status {
+    width: 30%;
+  }
+
+  &__release-date {
+    width: 18%;
+  }
+
+  &__row-animate-enter div {
+    overflow-y: hidden;
+    max-height: 0;
+  }
+  &__row-animate-enter-active div {
+    max-height: 50px;
+    transition: all 0.2s ease-in;
+  }
+  &__row-animate-exit div {
+    max-height: 50px;
+  }
+  &__row-animate-exit-active div {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.2s ease-in;
+  }
+
+  @include respond(phablet) {
+    th:first-child {
+      padding-left: 0;
+    }
+
+    td:first-child {
+      padding-left: 0;
+    }
+
+    &__project-title {
+      width: 25%;
+    }
+
+    &__company {
+      width: 45%;
+    }
+
+    &__status {
+      width: 25%;
+    }
+  }
+
+  @include respond(phone) {
+    th {
+      text-align: right;
+      padding-right: 0;
+    }
+
+    th:first-child {
+      text-align: left;
+      padding-left: 0;
+    }
+
+    th:last-child {
+      padding-right: 0;
+    }
+
+    td {
+      text-align: right;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    td:first-child {
+      text-align: left;
+      padding-left: 0;
+    }
+
+    td:last-child {
+      text-align: right;
+      padding-right: 0;
+    }
+
+    &__project-title {
+      width: 35%;
+    }
+
+    &__status {
+      width: 25%;
+    }
+
+    &__release-date {
+      width: 30%;
+    }
+
+    &__company--mobile {
+      font-size: 10px;
+      color: var(--color-subsection-heading);
+    }
+  }
+}

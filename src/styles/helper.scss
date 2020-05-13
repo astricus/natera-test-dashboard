@@ -1,0 +1,46 @@
+// Media-queries mixins
+@import './mixins.scss';
+
+.d-non {
+  display: none;
+}
+
+.d-non-md {
+  @include respond(tablet) {
+    display: none;
+  }
+}
+
+.d-non-sm {
+  @include respond(phablet) {
+    display: none;
+  }
+}
+
+.d-non-xs {
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.visible-xs {
+  @include respond2(phablet) {
+    display: none;
+  }
+}
+
+.visible-sm {
+  @include respond2(tablet) {
+    display: none;
+  }
+}
+
+.visible-md {
+  @include respond2(desktop) {
+    display: none;
+  }
+}
+
+.margin-30 {
+  margin: 30px;
+}

@@ -1,0 +1,140 @@
+@import '../../styles/mixins.scss';
+
+.modal {
+  position: relative;
+  visibility: visible;
+
+  &__background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(102, 102, 102, 0.55);
+    z-index: 1000;
+  }
+
+  &__wrapper-overflow {
+    display: flex;
+  }
+
+  &__wrapper {
+    position: relative;
+    margin: 0 18px;
+    min-width: 288px;
+    width: 698px;
+    height: 560px;
+    max-height: 90vh;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    opacity: 1;
+    z-index: 1010;
+
+    @include respond(phablet) {
+      max-width: 698px;
+      width: 100%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      min-height: auto;
+      height: auto;
+    }
+  }
+
+  &__btn-close {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 15px;
+    height: 15px;
+    @include respond(phone) {
+      top: 20px;
+      right: 20px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // MODAL ANIMATION
+
+  &__animation-appear {
+    opacity: 0;
+    .modal__wrapper-overflow {
+      overflow: hidden;
+    }
+    .modal__wrapper {
+      transform: translateY(100%);
+    }
+  }
+
+  &__animation-appear-active {
+    opacity: 1;
+    -moz-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    .modal__wrapper-overflow {
+      overflow: hidden;
+    }
+    .modal__wrapper {
+      transform: translateY(0);
+      transition: transform 200ms 200ms ease;
+    }
+  }
+
+  &__animation-enter {
+    opacity: 0;
+    .modal__wrapper-overflow {
+      overflow: hidden;
+    }
+    .modal__wrapper {
+      transform: translateY(100%);
+    }
+  }
+
+  &__animation-enter-active {
+    opacity: 1;
+    -moz-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    .modal__wrapper-overflow {
+      overflow: hidden;
+    }
+    .modal__wrapper {
+      transform: translateY(0);
+      transition: transform 200ms 200ms ease;
+    }
+  }
+
+  &__animation-exit {
+    display: inherit !important;
+    opacity: 1;
+    .modal__wrapper-overflow {
+      overflow: hidden;
+    }
+    .modal__wrapper {
+      transform: translateY(0) !important;
+    }
+  }
+  &__animation-exit-active {
+    opacity: 0;
+    display: inherit !important;
+    -moz-transition: opacity 200ms 200ms ease;
+    transition: opacity 200ms 200ms ease;
+    .modal__wrapper-overflow {
+      overflow: hidden;
+    }
+    .modal__wrapper {
+      transform: translateY(100%) !important;
+      transition: transform 200ms ease !important;
+    }
+  }
+}

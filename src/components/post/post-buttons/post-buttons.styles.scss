@@ -1,0 +1,8 @@
+.post {
+  &__publish {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid rgba(104, 131, 228, 0.2);
+    transition: all 0.2s ease;
+  }
+}

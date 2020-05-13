@@ -1,0 +1,87 @@
+// Media-queries mixins
+@import '../../../styles/mixins.scss';
+
+// ------------------------------------------------------------- //
+// DESKTOP COLUMNS
+// ------------------------------------------------------------- //
+
+// full-width column
+.col-12 {
+  display: flex;
+  width: 100%;
+  padding: 0 var(--gutter-half-width);
+}
+
+// 1/4-width column
+.col-3 {
+  display: flex;
+  width: calc(100% / 4);
+  padding: 0 var(--gutter-half-width);
+}
+
+// 5/8-width column
+.col-5-of-8 {
+  display: flex;
+  width: calc(100% / 8 * 5);
+  padding: 0 var(--gutter-half-width);
+}
+
+// 3/8-width column
+.col-3-of-8 {
+  display: flex;
+  width: calc(100% / 8 * 3);
+  padding: 0 var(--gutter-half-width);
+}
+
+// ------------------------------------------------------------- //
+// TABLET COLUMNS
+// ------------------------------------------------------------- //
+
+@include respond(tablet) {
+  // 1/3-width column
+  .col-4-md {
+    display: flex;
+    width: calc(100% / 3);
+    padding: 0 var(--gutter-half-width);
+  }
+
+  // 2/3-width column
+  .col-2-of-3-md {
+    display: flex;
+    width: calc(100% / 3 * 2);
+    padding: 0 var(--gutter-half-width);
+  }
+
+  // 1/2-width column
+  .col-6-md {
+    display: flex;
+    width: calc(100% / 2);
+    padding: 0 var(--gutter-half-width);
+  }
+}
+
+// ------------------------------------------------------------- //
+// PHABLET COLUMNS
+// ------------------------------------------------------------- //
+
+@include respond(phablet) {
+  // 1/2-width column
+  .col-6-sm {
+    display: flex;
+    width: calc(100% / 2);
+    padding: 0 var(--gutter-half-width);
+  }
+}
+
+// ------------------------------------------------------------- //
+// PHONE COLUMNS
+// ------------------------------------------------------------- //
+
+@include respond(phone) {
+  // full-width column
+  .col-12-xs {
+    display: flex;
+    width: 100%;
+    padding: 0 var(--gutter-half-width);
+  }
+}

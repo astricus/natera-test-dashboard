@@ -1,0 +1,77 @@
+// Media-queries mixins
+@import '../../styles/mixins.scss';
+
+.earnings {
+  padding: 24px 24px 24px 27px;
+  display: flex;
+  justify-content: space-between;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+
+  &__amount {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    padding-bottom: 6px;
+  }
+
+  &__icon {
+    width: 15px;
+    height: 27px;
+    margin-right: 12px;
+    margin-bottom: -2px;
+  }
+
+  &__growth {
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-subsection-heading);
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__growth-percents {
+    color: var(--color-primary);
+  }
+
+  &__statistics-button {
+    margin-top: auto;
+  }
+
+  &__chart {
+    margin-top: -20px;
+    width: 334px;
+  }
+
+  @include respond(phablet) {
+    flex-direction: column;
+
+    &__info {
+      flex-wrap: wrap;
+      height: 94px;
+      width: 100%;
+    }
+
+    &__statistics-button {
+      flex: 1 0 100%;
+      text-align: right;
+      margin-right: 12px;
+    }
+
+    &__chart {
+      margin-left: -16px;
+      width: 102%;
+    }
+  }
+
+  @include respond(phone) {
+    &__statistics-button {
+      text-align: left;
+      margin-top: 12px;
+    }
+  }
+}

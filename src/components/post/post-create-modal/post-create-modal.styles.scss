@@ -1,0 +1,213 @@
+@import '../../../styles/mixins.scss';
+
+.post-create-modal {
+  margin: 24px 60px 6px 60px;
+  overflow-y: initial;
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 24px;
+  }
+
+  &__controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+  }
+
+  &__switch {
+    margin-right: 18px;
+    @include respond(phone) {
+      margin-right: 6px;
+    }
+  }
+
+  &__instant-publish {
+    @include respond(phone) {
+      font-size: 10px;
+    }
+  }
+
+  &__cancel {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #757575;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__or {
+    margin-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #757575;
+  }
+
+  &__btn-publish {
+    @include respond(phone) {
+      margin-left: auto;
+    }
+  }
+
+  @include respond(phone) {
+    margin: 20px 30px;
+    height: auto;
+  }
+}
+
+.form {
+  border-bottom: 1px solid #ececec;
+  &__control {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  &__label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #c4c4c4;
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border: 1px solid #dadada;
+    border-radius: var(--border-radius);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 7px 14px 6px 14px;
+
+    &::placeholder {
+      color: #aeaeae;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid lighten(#6883e4, 15%);
+    }
+
+    &--danger {
+      border: 1px solid var(--color-danger);
+    }
+  }
+
+  &__textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid #dadada;
+    border-radius: var(--border-radius);
+    font-size: 12px;
+    line-height: 14px;
+    padding: 6px 14px 7px 14px;
+    &::placeholder {
+      color: #aeaeae;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid lighten(#6883e4, 15%);
+    }
+
+    &--danger {
+      border: 1px solid var(--color-danger);
+    }
+  }
+
+  &__input:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__upload-photo {
+    position: relative;
+    height: 29px;
+    width: 100%;
+    cursor: pointer;
+
+    &:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 29px;
+      display: block;
+      background: #ffffff;
+      color: #aeaeae;
+      border: 1px solid #dadada;
+      pointer-events: none;
+      border-radius: var(--border-radius);
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 7px 14px 6px 14px;
+      z-index: 1030;
+    }
+  }
+
+  &__btn-upload {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 112px;
+    height: 25px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #dadada;
+    z-index: 1050;
+  }
+
+  &__input-file {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1060;
+    height: 29px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  @include respond(phone) {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 18px;
+  }
+}

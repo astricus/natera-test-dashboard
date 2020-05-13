@@ -1,0 +1,46 @@
+// Sass variables for media-queries
+$container-lg: 990px;
+$container-md: 770px;
+$container-sm: 574px;
+$container-xs: 400px;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-xs {
+    @media only screen and (max-width: $container-xs) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: $container-sm) {
+      @content;
+    }
+  }
+  @if $breakpoint == phablet {
+    @media only screen and (max-width: $container-md) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: $container-lg) {
+      @content;
+    }
+  }
+}
+
+@mixin respond2($breakpoint) {
+  @if $breakpoint == phablet {
+    @media only screen and (min-width: $container-sm + 0.02px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: $container-md + 0.02px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: $container-lg + 0.02px) {
+      @content;
+    }
+  }
+}

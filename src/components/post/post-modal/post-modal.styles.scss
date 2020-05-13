@@ -1,0 +1,69 @@
+@import '../../../styles/mixins.scss';
+
+.post-modal {
+  height: 560px;
+  overflow-y: initial !important;
+  display: flex;
+  flex-direction: column;
+
+  @include respond(phone) {
+    min-height: auto;
+    height: auto;
+  }
+
+  &__image {
+    width: 698px;
+    height: 240px;
+
+    object-fit: cover;
+    @include respond(tablet) {
+      max-width: 100%;
+    }
+    @include respond(phone) {
+      max-height: 20vh;
+    }
+  }
+
+  &__post {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 60px 20px 60px;
+    border-bottom: 1px solid #ececec;
+    overflow-y: auto;
+    max-height: 70vh;
+
+    @include respond(phone) {
+      margin: 20px 40px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+
+  &__title-statistical {
+    padding-bottom: 20px;
+  }
+
+  &__text {
+    padding-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__author {
+    margin-top: auto;
+    padding: 30px 0;
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    max-height: 20vh;
+    margin-bottom: 20px;
+  }
+}

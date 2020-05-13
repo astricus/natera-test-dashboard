@@ -1,0 +1,30 @@
+// Media-queries mixins
+@import '../../../styles/mixins.scss';
+
+.project-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &__percents {
+    width: 25%;
+  }
+
+  &__status-bar {
+    position: relative;
+    background-color: #f5f5f5;
+    width: 75%;
+    height: 6px;
+    border-radius: 3px;
+  }
+
+  &__project-status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    height: 6px;
+    border-radius: 3px;
+  }
+}

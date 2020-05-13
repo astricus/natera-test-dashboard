@@ -1,0 +1,30 @@
+.post {
+  &__new-post {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  &__icon-new {
+    margin-top: 10px;
+    width: 42px;
+    height: 42px;
+  }
+
+  &__new-text {
+    margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 17px;
+    color: var(--color-primary);
+  }
+
+  &__btn-create-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 22px auto;
+  }
+}

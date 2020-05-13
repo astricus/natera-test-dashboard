@@ -1,0 +1,18 @@
+.projects-table {
+  &__btn-remove {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon-remove {
+    display: inline-block;
+    margin-left: 21px;
+    margin-bottom: -3px;
+    width: 14px;
+    height: 14px;
+  }
+}

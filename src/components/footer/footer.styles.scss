@@ -1,0 +1,11 @@
+.footer {
+  margin-top: 42px;
+  margin-bottom: 47px;
+  &__text {
+    padding: 0 18px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-footer);
+  }
+}

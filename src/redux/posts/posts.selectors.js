@@ -14,7 +14,8 @@ export const selectCurrentPostId = createSelector(
 
 export const selectCurrentPost = createSelector(
   [selectPosts, selectCurrentPostId],
-  (posts, currentPostId) => posts.find((post) => post.id === currentPostId)
+  (posts, currentPostId) =>
+    posts.length ? posts.find((post) => post.id === currentPostId) : null
 );
 
 export const selectPostModalIsVisible = createSelector(
@@ -27,7 +28,6 @@ export const selectCreatePostModalIsVisible = createSelector(
   (posts) => posts.createPostIsVisible
 );
 
-export const selectLastPostId = createSelector(
-  [selectPosts],
-  (posts) => posts[posts.length - 1].id
+export const selectLastPostId = createSelector([selectPosts], (posts) =>
+  posts.length ? posts[posts.length - 1].id : '0'
 );

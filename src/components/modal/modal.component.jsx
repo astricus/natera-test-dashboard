@@ -5,14 +5,10 @@ import { CSSTransition } from 'react-transition-group';
 import './modal.styles.scss';
 
 const Modal = ({ isVisible, hideModal, setCurrentPost, children }) => {
-  const postModalClose = () => {
-    setCurrentPost(null);
-    hideModal();
-  };
+  const postModalClose = () => hideModal();
 
   const postModalBgClose = (event) => {
     if (event.target.className === 'modal__background') {
-      setCurrentPost(null);
       hideModal();
     }
   };
@@ -22,6 +18,7 @@ const Modal = ({ isVisible, hideModal, setCurrentPost, children }) => {
       appear={true}
       in={isVisible}
       timeout={400}
+      onExited={() => setCurrentPost(null)}
       classNames="modal__animation"
     >
       <div className={`modal ${isVisible ? '' : 'd-non'}`}>

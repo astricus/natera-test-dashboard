@@ -18,30 +18,32 @@ const Highlights = ({ mode, posts }) => (
       key={mode ? 'dashboard_mode_posts' : 'edit_mode_posts'}
       className="row"
     >
-      {mode
-        ? posts
-            .filter((post) => post.isPublished)
-            .slice(-8)
-            .map((post) => (
-              <Column key={post.id} col="col-3 col-4-md col-6-sm col-12-xs">
-                <Card isPost={true}>
-                  <Post {...post} mode={mode} />
-                </Card>
-              </Column>
+      {posts
+        ? mode
+          ? posts
+              .filter((post) => post.isPublished)
+              .slice(-8)
+              .map((post) => (
+                <Column key={post.id} col="col-3 col-4-md col-6-sm col-12-xs">
+                  <Card isPost={true}>
+                    <Post {...post} mode={mode} />
+                  </Card>
+                </Column>
+              ))
+          : posts.slice(-11).map((post) => (
+              <CSSTransition
+                key={post.id}
+                timeout={200}
+                classNames="highlights__animation"
+              >
+                <Column col="col-3 col-4-md col-6-sm col-12-xs">
+                  <Card key={post.id} isPost={true}>
+                    <Post {...post} mode={mode} />
+                  </Card>
+                </Column>
+              </CSSTransition>
             ))
-        : posts.slice(-11).map((post) => (
-            <CSSTransition
-              key={post.id}
-              timeout={200}
-              classNames="highlights__animation"
-            >
-              <Column col="col-3 col-4-md col-6-sm col-12-xs">
-                <Card key={post.id} isPost={true}>
-                  <Post {...post} mode={mode} />
-                </Card>
-              </Column>
-            </CSSTransition>
-          ))}
+        : null}
       {!mode ? (
         <Column col="col-3 col-4-md col-6-sm col-12-xs">
           <Card isPost={true}>

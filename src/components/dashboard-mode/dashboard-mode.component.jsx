@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectMode } from '../../redux/mode/mode.selectors';
 import CompanyInfo from '../company-info/company-info.component';
 import Highlights from '../highlights/highlights.component';
@@ -9,7 +10,7 @@ import Footer from '../footer/footer.component';
 
 import './dashboard-mode.styles.scss';
 
-const DashboardMode = ({ mode }) => (
+export const DashboardMode = ({ mode }) => (
   <div className={`dashboard-mode ${!mode ? 'd-non' : ''}`}>
     <CompanyInfo />
     {/* Mode prop needed to be passed directly as true because animation take some time and <Highlights> is a reusable component. 
@@ -25,8 +26,8 @@ const DashboardMode = ({ mode }) => (
   </div>
 );
 
-const mapStateToProps = (state) => ({
-  mode: selectMode(state),
+const mapStateToProps = createStructuredSelector({
+  mode: selectMode,
 });
 
 export default connect(mapStateToProps)(DashboardMode);

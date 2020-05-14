@@ -14,7 +14,7 @@ const Button = ({
     type="button"
     className={`btn ${primary ? 'btn--primary' : ''} ${
       secondary ? 'btn--secondary' : ''
-    } ${danger ? 'btn--danger' : ''} ${className}`}
+    } ${danger ? 'btn--danger' : ''} ${className ? className : ''}`}
     onClick={onClick}
   >
     {children}

@@ -6,7 +6,7 @@ import Container from '../grid/container/container.component';
 
 import './header.styles.scss';
 
-const Header = ({ mode, setMode }) => (
+export const Header = ({ mode, setMode }) => (
   <div className="header">
     <Container>
       <ul className="header__navigation navigation">

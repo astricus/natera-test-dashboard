@@ -23,7 +23,7 @@ const Post = (props) => {
 
   const showPostModal = (event) => {
     if (!event.target.className.includes('btn')) {
-      showModal(true);
+      showModal(true); // showModal(modalType) - shows modal, modalType = true for a post, modalType = false for Create Post
       setCurrentPost(id);
     }
   };

@@ -18,7 +18,9 @@ const postsReducer = (state = INITIAL_STATE, action) => {
     case PostsActionTypes.DELETE_POST:
       return {
         ...state,
-        posts: state.posts.filter((post) => post.id !== action.payload),
+        posts: state.posts.length
+          ? state.posts.filter((post) => post.id !== action.payload)
+          : state.posts,
       };
     case PostsActionTypes.PUBLISH_POST:
       return {

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render primary Button component 1`] = `
+<button
+  className="btn btn--primary   "
+  type="button"
+>
+  Click me!
+</button>
+`;

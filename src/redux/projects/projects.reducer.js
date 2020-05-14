@@ -13,9 +13,9 @@ const ProjectsReducer = (state = INITIAL_STATE, action) => {
     case ProjectsActionTypes.DELETE_PROJECT:
       return {
         ...state,
-        projects: state.projects.filter(
-          (project) => project.id !== action.payload
-        ),
+        projects: state.projects.length
+          ? state.projects.filter((project) => project.id !== action.payload)
+          : state.projects,
       };
     default:
       return state;

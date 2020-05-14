@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render Header component 1`] = `
+<div
+  className="header"
+>
+  <Container>
+    <ul
+      className="header__navigation navigation"
+    >
+      <li>
+        <button
+          className="navigation__item navigation__item--active"
+          onClick={[Function]}
+        >
+          Dashboard mode
+        </button>
+      </li>
+      <li>
+        <button
+          className="navigation__item  d-non-xs"
+          onClick={[Function]}
+        >
+          Edit mode
+        </button>
+      </li>
+    </ul>
+  </Container>
+</div>
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Card component 1`] = `
+<div
+  className="card card--post"
+>
+  Post Card
+</div>
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DashboardMode component should render DashboardMode component 1`] = `
+<div
+  className="dashboard-mode "
+>
+  <CompanyInfo />
+  <Connect(Highlights)
+    mode={true}
+  />
+  <Connect(Notification) />
+  <ProjectsStatuses
+    key="projects-statuses__true"
+    mode={true}
+  />
+  <Footer />
+</div>
+`;
+
+exports[`DashboardMode component should render DashboardMode component 2`] = `
+<div
+  className="dashboard-mode d-non"
+>
+  <CompanyInfo />
+  <Connect(Highlights)
+    mode={true}
+  />
+  <Connect(Notification) />
+  <ProjectsStatuses
+    key="projects-statuses__false"
+    mode={true}
+  />
+  <Footer />
+</div>
+`;

@@ -1,4 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <h3 align="center">Natera test dashboard app</h3>
+  <p align="center">
+  It is a test dashboard application made for Hosta LLC.<br>
+  DEMO &rarr; <a href="https://natera-test-dashboard.herokuapp.com/" rel="noopener noreferrer">Natera test dashboard</a>
+  </p>
+</p>
+
+## :fire: Description
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Styling was built with pure CSS/Sass without any styling frameworks. List of features:
+
+- Animations were built with Sass and [React Transition Group](https://reactcommunity.org/react-transition-group/)
+- Chart was built with [Apex charts](https://apexcharts.com/) instead of putting a static image
+- Switch was built with a light [rc-switch](https://github.com/react-component/switch)
+- Author input in create post form included suggestions with [React Autosuggest](https://react-autosuggest.js.org/)
+- Other libraries/dependencies - [redux](https://redux.js.org/), [reselect](https://github.com/reduxjs/reselect)
+- Some tests were written with a help of [Jest](https://jestjs.io/) and [Enzyme](https://enzymejs.github.io/enzyme/) with [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json)
 
 ## Available Scripts
 

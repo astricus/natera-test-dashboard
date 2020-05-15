@@ -2,8 +2,8 @@ import React from 'react';
 
 import './section.styles.scss';
 
-const Section = (props) => (
-  <section className="section">{props.children}</section>
+const Section = ({ children }) => (
+  <section className="section">{children}</section>
 );
 
 export default Section;

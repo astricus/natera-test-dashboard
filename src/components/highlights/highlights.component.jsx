@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectPosts } from '../../redux/posts/posts.selectors';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Section from '../section/section.component';
@@ -55,8 +56,8 @@ const Highlights = ({ mode, posts }) => (
   </Section>
 );
 
-const mapStateToProps = (state) => ({
-  posts: selectPosts(state),
+const mapStateToProps = createStructuredSelector({
+  posts: selectPosts,
 });
 
 export default connect(mapStateToProps)(Highlights);

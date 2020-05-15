@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectUsers } from '../../../redux/users/users.selectors';
 
 import './post-author.styles.scss';
@@ -23,8 +24,8 @@ const PostAuthor = ({ users, mode, authorId, className }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  users: selectUsers(state),
+const mapStateToProps = createStructuredSelector({
+  users: selectUsers,
 });
 
 export default connect(mapStateToProps)(PostAuthor);

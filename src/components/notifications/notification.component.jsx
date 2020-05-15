@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectMode } from '../../redux/mode/mode.selectors';
 import { selectNotificationIsVisible } from '../../redux/notification/notification.selectors';
 import { hideNotification } from '../../redux/notification/notification.actions';
@@ -45,9 +46,9 @@ const Notification = ({ isVisible, mode, hideNotification }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  isVisible: selectNotificationIsVisible(state),
-  mode: selectMode(state),
+const mapStateToProps = createStructuredSelector({
+  isVisible: selectNotificationIsVisible,
+  mode: selectMode,
 });
 
 const mapDispatchToProps = (dispatch) => ({

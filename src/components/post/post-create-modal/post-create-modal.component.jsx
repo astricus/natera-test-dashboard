@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { hideModal, createNewPost } from '../../../redux/posts/posts.actions';
 import {
   createNewUser,
@@ -20,16 +21,18 @@ import AuthorSearch from '../post-create-form/author-search/author-search.compon
 
 import './post-create-modal.styles.scss';
 
+// PostCreateModal component is a modal which fires when a user clicks to create a new post
 const PostCreateModal = ({
-  createPostIsVisible,
-  lastPostId,
-  currentUserId,
-  lastUserId,
-  hideModal,
-  createNewPost,
-  createNewUser,
-  setCurrentUserId,
+  createPostIsVisible, // Create post modal is visible or not, boolean
+  lastPostId, // Last post id selector to create an id = lastPostId + 1 for a new post
+  currentUserId, // Current user id selector if an author of the post exists
+  lastUserId, // Last user id selector to create new user with id = lastUserId + 1
+  hideModal, // hideModal action
+  createNewPost, // createNewPost action
+  createNewUser, // createNewUser action
+  setCurrentUserId, // setCurrentUserId action
 }) => {
+  // Initial object for a post
   const emptyPost = {
     id: '',
     type: 'ordinary',
@@ -39,19 +42,26 @@ const PostCreateModal = ({
     authorId: '',
     isPublished: false,
   };
+  // Initial object with boolean variables for simple validation if the fields are empty
   const dangerDefault = {
-    title: false,
-    text: false,
-    author: false,
+    title: false, // for title input
+    text: false, // for text input
+    author: false, // for author input
   };
+  // File placeholder text
   const filePlaceholderDafault = 'Select an image?';
+  // Local post state
   const [post, setPost] = useState(emptyPost);
+  // local file placeholder text state
   const [filePlaceholder, setFilePlaceholder] = useState(
     filePlaceholderDafault
   );
+  // local author name state
   const [author, setAuthor] = useState('');
+  // local danger states for title, text and author
   const [danger, setDanger] = useState(dangerDefault);
 
+  // function clearState sets the state to initial values
   const clearState = () => {
     setPost(emptyPost);
     setFilePlaceholder(filePlaceholderDafault);
@@ -59,12 +69,15 @@ const PostCreateModal = ({
     setDanger(dangerDefault);
   };
 
+  // function postModalClose closes the modal, uses hideModal action
   const postModalClose = () => hideModal();
 
+  // function handleSwitchChange handles instant publish switch change
   const handleSwitchChange = (value) => {
     setPost({ ...post, isPublished: value });
   };
 
+  // funciton validateInput checks whether the title, text and author fields are empty
   const validateInput = () => {
     let isValid = true;
     let newDanger = { title: false, text: false, author: false };
@@ -86,6 +99,7 @@ const PostCreateModal = ({
     return isValid;
   };
 
+  // function createPost creates a new post, uses createNewPost action, createNewUser action if an author does not exists
   const createPost = () => {
     if (validateInput()) {
       let authorId;
@@ -103,18 +117,21 @@ const PostCreateModal = ({
     }
   };
 
+  // function handleInputChange handles tile, text and author inputs change
   const handleInputChange = (event) => {
     if (danger.title || danger.text)
       setDanger({ ...danger, [event.target.name]: false });
     setPost({ ...post, [event.target.name]: event.target.value });
   };
 
+  // function hanldeFileInputChange handles file input change
   const handleFileInputChange = (event) => {
     const imageUrl = event.target.value;
     const fileName = imageUrl.replace(/.*(\/|\\)/, '');
     setFilePlaceholder(fileName);
   };
 
+  // function handleAuthorChange handles author input change
   const handleAuthorChange = (event, { newValue }) => {
     if (danger.author) setDanger({ ...danger, author: false });
     if (currentUserId) setCurrentUserId(null);
@@ -216,11 +233,11 @@ const mapDispatchToProps = (dispatch) => ({
   setCurrentUserId: (userId) => dispatch(setCurrentUserId(userId)),
 });
 
-const mapStateToProps = (state) => ({
-  createPostIsVisible: selectCreatePostModalIsVisible(state),
-  lastPostId: selectLastPostId(state),
-  currentUserId: selectCurrentUserId(state),
-  lastUserId: selectLastUserId(state),
+const mapStateToProps = createStructuredSelector({
+  createPostIsVisible: selectCreatePostModalIsVisible,
+  lastPostId: selectLastPostId,
+  currentUserId: selectCurrentUserId,
+  lastUserId: selectLastUserId,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostCreateModal);

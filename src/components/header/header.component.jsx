@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectMode } from '../../redux/mode/mode.selectors';
 import { setMode } from '../../redux/mode/mode.actions';
 import Container from '../grid/container/container.component';
@@ -35,8 +36,8 @@ export const Header = ({ mode, setMode }) => (
   </div>
 );
 
-const mapStateToProps = (state) => ({
-  mode: selectMode(state),
+const mapStateToProps = createStructuredSelector({
+  mode: selectMode,
 });
 
 const mapDispatchToProps = (dispatch) => ({

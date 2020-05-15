@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectMode } from '../../redux/mode/mode.selectors';
 import Highlights from '../highlights/highlights.component';
 import NotificationsSwitch from '../notifications-switch/notifications-switch.component';
@@ -23,8 +24,8 @@ const EditMode = ({ mode }) => (
   </div>
 );
 
-const mapStateToProps = (state) => ({
-  mode: selectMode(state),
+const mapStateToProps = createStructuredSelector({
+  mode: selectMode,
 });
 
 export default connect(mapStateToProps)(EditMode);

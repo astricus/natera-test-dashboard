@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectNotificationIsVisible } from '../../redux/notification/notification.selectors';
 import {
   hideNotification,
@@ -36,8 +37,8 @@ const NotificationsSwitch = ({
   );
 };
 
-const mapStateToProps = (state) => ({
-  isVisible: selectNotificationIsVisible(state),
+const mapStateToProps = createStructuredSelector({
+  isVisible: selectNotificationIsVisible,
 });
 
 const mapDispatchToProps = (dispatch) => ({

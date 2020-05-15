@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { setCurrentUserId } from '../../../../redux/users/users.actions';
 import { selectUsers } from '../../../../redux/users/users.selectors';
 import Autosuggest from 'react-autosuggest';
 
 import './author-search.styles.scss';
 
+// AuthorSearch react-autosuggest component helps to select authors of the new post
 const AuthorSearch = ({ users, value, danger, onChange, setCurrentUserId }) => {
   const [suggestions, setSuggestions] = useState(users);
 
@@ -63,8 +65,8 @@ const AuthorSearch = ({ users, value, danger, onChange, setCurrentUserId }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  users: selectUsers(state),
+const mapStateToProps = createStructuredSelector({
+  users: selectUsers,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { selectProjects } from '../../../redux/projects/projects.selectors';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import SubsectionHeading from '../../typography/subsection-heading/subsection-heading.component';
@@ -79,8 +80,8 @@ const ProjectsStatusesTable = ({ mode, projects }) => (
   </div>
 );
 
-const mapStateToProps = (state) => ({
-  projects: selectProjects(state),
+const mapStateToProps = createStructuredSelector({
+  projects: selectProjects,
 });
 
 export default connect(mapStateToProps)(ProjectsStatusesTable);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { hideModal, setCurrentPost } from '../../../redux/posts/posts.actions';
 import {
   selectCurrentPost,
@@ -63,9 +64,9 @@ const mapDispatchToProps = (dispatch) => ({
   setCurrentPost: (postId) => dispatch(setCurrentPost(postId)),
 });
 
-const mapStateToProps = (state) => ({
-  post: selectCurrentPost(state),
-  isVisible: selectPostModalIsVisible(state),
+const mapStateToProps = createStructuredSelector({
+  post: selectCurrentPost,
+  isVisible: selectPostModalIsVisible,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostModal);

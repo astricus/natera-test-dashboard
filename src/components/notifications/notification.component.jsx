@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectMode } from '../../redux/mode/mode.selectors';
 import { selectNotificationIsVisible } from '../../redux/notification/notification.selectors';
 import { hideNotification } from '../../redux/notification/notification.actions';
+import { CSSTransition } from 'react-transition-group';
 
 import './notification.styles.scss';
 
@@ -18,31 +19,37 @@ const Notification = ({ isVisible, mode, hideNotification }) => {
     }
   });
   return (
-    <div className={`${isVisible ? '' : 'd-non'} notification d-non-xs`}>
-      <img
-        src="/img/SVG/Asset 4.svg"
-        alt="Notification icon"
-        className="notification__icon"
-      />
-      <div className="notification__item">
-        <h3 className="notification__message">
-          Don't forget to publish weekly notes about manager's work!
-        </h3>
-        <p className="notification__close-message">
-          Notification will be closed after 8 seconds
-        </p>
-      </div>
-      <button
-        className="notification__close-btn"
-        onClick={() => hideNotification()}
-      >
+    <CSSTransition
+      in={isVisible}
+      timeout={200}
+      classNames="notification__animation"
+    >
+      <div className={`${isVisible ? '' : 'd-non'} notification d-non-xs`}>
         <img
-          src="/img/SVG/Asset 7.svg"
-          alt="Notification close icon"
-          className="notification__close-icon"
+          src="/img/SVG/Asset 4.svg"
+          alt="Notification icon"
+          className="notification__icon"
         />
-      </button>
-    </div>
+        <div className="notification__item">
+          <h3 className="notification__message">
+            Don't forget to publish weekly notes about manager's work!
+          </h3>
+          <p className="notification__close-message">
+            Notification will be closed after 8 seconds
+          </p>
+        </div>
+        <button
+          className="notification__close-btn"
+          onClick={() => hideNotification()}
+        >
+          <img
+            src="/img/SVG/Asset 7.svg"
+            alt="Notification close icon"
+            className="notification__close-icon"
+          />
+        </button>
+      </div>
+    </CSSTransition>
   );
 };
 

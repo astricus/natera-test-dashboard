@@ -9,6 +9,17 @@
   align-items: center;
   width: 100%;
 
+  &__animation-exit {
+    display: flex !important;
+    opacity: 1;
+  }
+
+  &__animation-exit-active {
+    display: flex !important;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
   &__icon {
     display: block;
     width: 29px;

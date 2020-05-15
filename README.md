@@ -8,7 +8,7 @@
 
 ## :fire: Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Styling was built with pure CSS/Sass without any styling frameworks. List of features:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Styling was built with pure CSS/Sass, BEM without any styling frameworks. List of features:
 
 - Animations were built with Sass and [React Transition Group](https://reactcommunity.org/react-transition-group/)
 - Chart was built with [Apex charts](https://apexcharts.com/) instead of putting a static image

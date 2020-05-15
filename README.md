@@ -2,7 +2,7 @@
   <h3 align="center">Natera test dashboard app</h3>
   <p align="center">
   It is a test dashboard application made for Hosta LLC.<br>
-  DEMO &rarr; <a href="https://natera-test-dashboard.herokuapp.com/" rel="noopener noreferrer">Natera test dashboard</a>
+  DEMO &rarr; <a href="https://natera-test-dashboard.herokuapp.com/" target="_blank" rel="noopener noreferrer">Natera test dashboard</a>
   </p>
 </p>
 

@@ -17,6 +17,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Other libraries/dependencies - [redux](https://redux.js.org/), [reselect](https://github.com/reduxjs/reselect)
 - Some tests were written with a help of [Jest](https://jestjs.io/) and [Enzyme](https://enzymejs.github.io/enzyme/) with [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json)
 
+Application data (users, posts, projects) is stored in `data.json` in `src` folder.
+
 ## Available Scripts
 
 In the project directory, you can run:
